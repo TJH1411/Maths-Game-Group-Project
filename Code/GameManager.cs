@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     private AppleScript[] selectedApples = new AppleScript[2]; //Array to store the selected apples//
     private int targetTotal = 10;//Targettotal that user needs to achieve//
-    public Text resultText;//That displays the result//
+    public TextMeshProUGUI resultText;//That displays the result//
 
     private void Awake()
     {
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
             if(selectedApples[i] == null)
             {
                 selectedApples[i]= apple;
-                apple.GetComponent<SpriteRenderer>().color = Color.yellow;
+                apple.GetComponent<MeshRenderer>().material.color = Color.yellow;
                 break;
             }
 
@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
         {
             if(apple!=null)
             {
-                apple.GetComponent<SpriteRenderer>().color = Color.white; // Reset color
+                apple.GetComponent<MeshRenderer>().material.color = Color.white; // Reset color to white
             }
         }
 
